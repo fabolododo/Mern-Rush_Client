@@ -15,7 +15,7 @@ export const getUsers = () => async dispatch => {
     dispatch({ type:CLEAR_USER });
 
     try {
-        const res = await axios.get('/api/users');
+        const res = await axios.get('https://mern-rush.herokuapp.com/api/users');
 
         dispatch({
             type: GET_USERS,
@@ -33,7 +33,7 @@ export const getUsers = () => async dispatch => {
 //Get User by ID
 export const getUserById = userId => async dispatch => {
     try {
-        const res = await axios.get(`/api/users/${userId}`);
+        const res = await axios.get(`https://mern-rush.herokuapp.com/api/users/${userId}`);
 
         dispatch({
             type: GET_USER,
@@ -55,7 +55,7 @@ export const updateUserById = (
 ) => async dispatch => {
     try {
 
-        const res = await axios.put(`/api/users/${userId}`, formData);
+        const res = await axios.put(`https://mern-rush.herokuapp.com/api/users/${userId}`, formData);
 
         dispatch({
             type: UPDATE_USER,
